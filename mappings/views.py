@@ -1,4 +1,6 @@
-from rest_framework import generics, permissions, status
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+from rest_framework import generics, status
 from rest_framework.response import Response
 from .models import PatientDoctorMapping
 from .serializers import MappingSerializer
@@ -63,3 +65,12 @@ class MappingDetail(generics.DestroyAPIView):
     serializer_class = MappingSerializer
     permission_classes = [IsAuthenticated]
     lookup_field = 'id'
+
+class PatientDoctorDelete(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def delete(self, request, id):
+        mapping = get_object_or_404(PatientDoctorMapping, id=id, patient__user=request.user)
+        mapping.delete()
+        return Response({'message': 'Mapping deleted successfully.'}, status=status.HTTP_204_NO_CONTENT)
+

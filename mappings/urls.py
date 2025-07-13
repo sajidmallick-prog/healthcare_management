@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import MappingListCreate, MappingListByPatient, MappingDetail
+from .views import MappingListCreate, MappingListByPatient, MappingDetail, PatientDoctorDelete
 
 urlpatterns = [
     # POST /api/mappings/ - Assign a doctor to a patient
@@ -11,4 +11,5 @@ urlpatterns = [
     
     # DELETE /api/mappings/<id>/ - Remove a doctor from a patient
     path('<int:id>/', MappingDetail.as_view(), name='mapping-detail'),
+    path('delete/<int:id>/', PatientDoctorDelete.as_view(), name='patient-doctor-delete'),
 ]

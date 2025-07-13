@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "4eab76e0-7bd5-44d8-ae99-043d9002042b",
+		"name": "HealthcareBackend.postman_collections.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42162208"
+	},
+	"item": [
+		{
+			"name": "Add Patients",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyMzUxMjA0LCJpYXQiOjE3NTIzNDc2MDQsImp0aSI6ImQxNTIzM2YzMjVmZTQ2M2RiMTAwZTI3MWM3MzgyYmI0IiwidXNlcl9pZCI6NH0.nlssm-9o15DJotO1pfYhVCC-J85JYJBoHuLHYhGrIqA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Sk Anjar Ali \",\n  \"dob\": \"1999-05-12\",\n  \"gender\": \"Male\",\n  \"contact\": \"7006543223\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patients/patients/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						"patients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Doctors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyMzUxMjA0LCJpYXQiOjE3NTIzNDc2MDQsImp0aSI6ImQxNTIzM2YzMjVmZTQ2M2RiMTAwZTI3MWM3MzgyYmI0IiwidXNlcl9pZCI6NH0.nlssm-9o15DJotO1pfYhVCC-J85JYJBoHuLHYhGrIqA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"patient\": 6,\n  \"doctor\": 5\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/mappings/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"mappings",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Doctors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyMzUxMjA0LCJpYXQiOjE3NTIzNDc2MDQsImp0aSI6ImQxNTIzM2YzMjVmZTQ2M2RiMTAwZTI3MWM3MzgyYmI0IiwidXNlcl9pZCI6NH0.nlssm-9o15DJotO1pfYhVCC-J85JYJBoHuLHYhGrIqA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Dr. jaykol\",\n  \"specialization\": \"Radiologist\",\n  \"experience\": 12,\n  \"contact\": 9382022800\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/doctors/doctors/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"doctors",
+						"doctors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"sangitahaldar\",\n    \"password\": \"Sajid@28\",\n    \"email\": \"sangita007@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Doctors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyMzUxMjA0LCJpYXQiOjE3NTIzNDc2MDQsImp0aSI6ImQxNTIzM2YzMjVmZTQ2M2RiMTAwZTI3MWM3MzgyYmI0IiwidXNlcl9pZCI6NH0.nlssm-9o15DJotO1pfYhVCC-J85JYJBoHuLHYhGrIqA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Dr. jay kol\",\n  \"specialization\": \"Radiologist\",\n  \"experience\": 12,\n  \"contact\": 9382022800\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/doctors/doctors/update/5/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"doctors",
+						"doctors",
+						"update",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Patients",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyMzUxMjA0LCJpYXQiOjE3NTIzNDc2MDQsImp0aSI6ImQxNTIzM2YzMjVmZTQ2M2RiMTAwZTI3MWM3MzgyYmI0IiwidXNlcl9pZCI6NH0.nlssm-9o15DJotO1pfYhVCC-J85JYJBoHuLHYhGrIqA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Sk Anjar Ali \",\n  \"dob\": \"1999-05-12\",\n  \"gender\": \"Male\",\n  \"contact\": \"7006543223\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patients/patients/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						"patients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Refresh token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MjkzOTgzMiwiaWF0IjoxNzUyMzM1MDMyLCJqdGkiOiI5ZTM0NDljNzBjY2I0ZGVmYWJkMTM4MDQ5MTRjYTNhZSIsInVzZXJfaWQiOjN9.ooVN7y0M-oANQXxOTAzaOXUb1naeXM6RR_c26WykdKQ\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/refreshtoken/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"refreshtoken",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
